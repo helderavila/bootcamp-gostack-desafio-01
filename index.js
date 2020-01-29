@@ -39,9 +39,13 @@ server.use((req, res, next) => {
 
 // Rota de criação de um projeto
 server.post('/projects', (req, res) => {
-  const project = req.body
+  const { id, title } = req.body
 
-  console.log(project)
+  const project = {
+    id,
+    title,
+    tasks: []
+  }
 
   projects.push(project)
 
